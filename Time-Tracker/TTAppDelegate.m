@@ -23,8 +23,8 @@
     TTListViewController *vc = [TTListViewController new];
     DetailViewController *dvc = [DetailViewController new];
     CustomEntryViewController *cevc = [CustomEntryViewController new];
-    //UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
-    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:dvc];
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+    //UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:dvc];
     //UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:cevc];
     self.window.rootViewController = nc;
     

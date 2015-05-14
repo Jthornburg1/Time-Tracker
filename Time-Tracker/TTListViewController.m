@@ -25,12 +25,39 @@
         [self.view addSubview:self.tableView];
         self.view.backgroundColor = [UIColor redColor];
         self.tableView.backgroundColor = [UIColor blueColor];
+        
+        UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
+                                      initWithTitle:@"Add"
+                                      style:UIBarButtonSystemItemAdd
+                                      target:self
+                                      action:@selector(addButtonMethod)];
+        
+        self.navigationItem.rightBarButtonItem = addButton;
     }
     return self;
 }
 
+-(void)addButtonMethod
+{
+    DetailViewController *dvc = [DetailViewController new];
+    
+    ProjectController *projectController = [ProjectController sharedInstance];
+    Project *newProject = [Project new];
+    newProject.title = @"Test";
+    [projectController addProject:newProject];
+    dvc.project = newProject;
+
+    [self.navigationController pushViewController:dvc animated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
     // Do any additional setup after loading the view.
 }
 
