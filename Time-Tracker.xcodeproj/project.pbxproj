@@ -25,6 +25,7 @@
 		A58A2E701B05431D00CBCF9F /* DetailTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A58A2E6F1B05431D00CBCF9F /* DetailTableViewDataSource.m */; };
 		A58A2E741B054C9300CBCF9F /* CustomEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A58A2E721B054C9300CBCF9F /* CustomEntryViewController.m */; };
 		A58A2E751B054C9300CBCF9F /* CustomEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A58A2E731B054C9300CBCF9F /* CustomEntryViewController.xib */; };
+		A58A2E771B05532100CBCF9F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A58A2E761B05532100CBCF9F /* MessageUI.framework */; };
 		A5CCEF431B052F7C008BD5F5 /* TTListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CCEF421B052F7C008BD5F5 /* TTListViewController.m */; };
 		A5CCEF461B053010008BD5F5 /* TTListTableViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CCEF451B053010008BD5F5 /* TTListTableViewDatasource.m */; };
 		A5CCEF491B0530F7008BD5F5 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CCEF481B0530F7008BD5F5 /* Project.m */; };
@@ -68,6 +69,7 @@
 		A58A2E711B054C9300CBCF9F /* CustomEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomEntryViewController.h; sourceTree = "<group>"; };
 		A58A2E721B054C9300CBCF9F /* CustomEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomEntryViewController.m; sourceTree = "<group>"; };
 		A58A2E731B054C9300CBCF9F /* CustomEntryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomEntryViewController.xib; sourceTree = "<group>"; };
+		A58A2E761B05532100CBCF9F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A5CCEF411B052F7C008BD5F5 /* TTListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTListViewController.h; sourceTree = "<group>"; };
 		A5CCEF421B052F7C008BD5F5 /* TTListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTListViewController.m; sourceTree = "<group>"; };
 		A5CCEF441B053010008BD5F5 /* TTListTableViewDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTListTableViewDatasource.h; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A58A2E771B05532100CBCF9F /* MessageUI.framework in Frameworks */,
 				7116F77819421700006C8F06 /* CoreGraphics.framework in Frameworks */,
 				7116F77A19421700006C8F06 /* UIKit.framework in Frameworks */,
 				7116F77619421700006C8F06 /* Foundation.framework in Frameworks */,
@@ -124,6 +127,7 @@
 		7116F77419421700006C8F06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A58A2E761B05532100CBCF9F /* MessageUI.framework */,
 				7116F77519421700006C8F06 /* Foundation.framework */,
 				7116F77719421700006C8F06 /* CoreGraphics.framework */,
 				7116F77919421700006C8F06 /* UIKit.framework */,
@@ -149,10 +153,10 @@
 				A5CCEF451B053010008BD5F5 /* TTListTableViewDatasource.m */,
 				A58A2E691B053CF800CBCF9F /* DetailViewController.h */,
 				A58A2E6A1B053CF800CBCF9F /* DetailViewController.m */,
+				A58A2E6B1B053CF800CBCF9F /* DetailViewController.xib */,
 				A58A2E711B054C9300CBCF9F /* CustomEntryViewController.h */,
 				A58A2E721B054C9300CBCF9F /* CustomEntryViewController.m */,
 				A58A2E731B054C9300CBCF9F /* CustomEntryViewController.xib */,
-				A58A2E6B1B053CF800CBCF9F /* DetailViewController.xib */,
 				A58A2E6E1B05431D00CBCF9F /* DetailTableViewDataSource.h */,
 				A58A2E6F1B05431D00CBCF9F /* DetailTableViewDataSource.m */,
 				A58A2E661B05329E00CBCF9F /* ProjectController.h */,

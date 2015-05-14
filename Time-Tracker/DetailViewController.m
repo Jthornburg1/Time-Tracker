@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "Project.h"
 #import "CustomEntryViewController.h"
+#import <MessageUI/MessageUI.h>
 
 @interface DetailViewController ()
 
@@ -62,7 +63,21 @@
 
 - (IBAction)reportBBM
 {
+    MFMailComposeViewController *mailVC = [MFMailComposeViewController new];
     
+    NSMutableString *mutStr;
+    for (Entry *entry in self.project.entries)
+    {
+        NSDateFormatter *dateFmt = [NSDateFormatter new];
+        
+        NSString *startStr = [dateFmt stringFromDate:entry.startDate];
+        NSString *endStr = [dateFmt stringFromDate:entry.endDate];
+        
+        [mutStr appendString:startStr];
+        [mutStr appendString:endStr];
+    }
+    [mailVC setMessageBody:(NSString *)mutStr isHTML:YES];
+    [self presentViewController:mailVC animated:YES completion:nil];
 }
 
 /*
