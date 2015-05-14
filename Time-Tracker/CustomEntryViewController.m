@@ -43,6 +43,9 @@
     
     entry.startDate = self.startDatePicker.date;
     entry.endDate   = self.endDatePicker.date;
+    
+    [self.project addEntry:entry];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

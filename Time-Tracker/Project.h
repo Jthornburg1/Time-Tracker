@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSMutableArray *entries;
 @property (nonatomic, strong) Entry *currentEntry;
 
+-(instancetype)init;
 -(void)addEntry:(Entry *)entry;
 -(void)removeEntry:(Entry *)entry;
 -(NSDictionary *)toArrayOfDictionaries;

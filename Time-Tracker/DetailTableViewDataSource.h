@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Project.h"
 
-@interface DetailTableViewDataSource : NSObject
+@interface DetailTableViewDataSource : NSObject <UITableViewDataSource>
 
 @property (nonatomic, strong) Project *project;
 

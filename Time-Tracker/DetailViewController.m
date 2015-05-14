@@ -8,7 +8,9 @@
 
 #import "DetailViewController.h"
 #import "Project.h"
+#import "Entry.h"
 #import "CustomEntryViewController.h"
+#import "DetailTableViewDataSource.h"
 
 @interface DetailViewController ()
 
@@ -22,7 +24,10 @@
     if (self)
     {
         self.dataSource = [DetailTableViewDataSource new];
-        self.tableView.dataSource = (id)self.dataSource;
+        //self.tableView = [UITableView new];
+        //self.tableView.frame = self.view.frame;
+        //self.tableView.dataSource = (id)self.dataSource;
+        //self.dataSource.project = self.project;
     }
     return self;
 }
@@ -30,13 +35,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.dataSource = (id)self.project;
+    //self.dataSource = (id)self.project;
+    self.dataSource.project = self.project;
+    self.tableView.delegate = self.dataSource;
+    NSLog(@"checkpoint");
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    [self.tableView reloadData];
     
     self.titleTextField.text = self.project.title;
 }
@@ -48,7 +56,7 @@
 
 - (IBAction)addBBM
 {
-    CustomEntryViewController *cevc = [CustomEntryViewController new];
+    CustomEntryViewController *cevc = [CustomEntryViewController new];    
     
     cevc.project = self.project;
     
@@ -118,6 +126,12 @@
 {
     self.project.title = textField.text;
     return YES;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSLog(@"got here");
+    return 0;
 }
 
 @end
