@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="titleTextField" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0C-sw-3k5">
-                    <rect key="frame" x="249" y="80" width="103" height="30"/>
+                    <rect key="frame" x="15" y="80" width="570" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
@@ -71,6 +71,8 @@
                 <constraint firstAttribute="centerX" secondItem="DMh-1a-23f" secondAttribute="centerX" id="4VY-co-TRB"/>
                 <constraint firstItem="X0C-sw-3k5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="4yO-gw-ifS"/>
                 <constraint firstAttribute="trailing" secondItem="ycf-zJ-Bqx" secondAttribute="trailing" id="6fW-ZS-wOY"/>
+                <constraint firstItem="X0C-sw-3k5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="ATk-Eo-of5"/>
+                <constraint firstAttribute="trailing" secondItem="X0C-sw-3k5" secondAttribute="trailing" constant="15" id="Caf-2x-Nvs"/>
                 <constraint firstItem="ycf-zJ-Bqx" firstAttribute="top" secondItem="DMh-1a-23f" secondAttribute="bottom" constant="22" id="Dsc-C5-R54"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DMh-1a-23f" secondAttribute="trailing" constant="8" id="Ibr-D8-uNM"/>
                 <constraint firstItem="DMh-1a-23f" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Lys-iL-wJI"/>

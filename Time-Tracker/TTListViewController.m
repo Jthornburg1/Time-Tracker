@@ -23,6 +23,7 @@
         self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
         self.tableView.dataSource = self.dataSource;
         [self.view addSubview:self.tableView];
+        self.tableView.delegate = self;
         self.view.backgroundColor = [UIColor redColor];
         self.tableView.backgroundColor = [UIColor blueColor];
         
@@ -55,8 +56,8 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self.tableView reloadData];
     // Do any additional setup after loading the view.
 }
