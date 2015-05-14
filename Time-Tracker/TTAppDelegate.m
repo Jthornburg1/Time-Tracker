@@ -7,6 +7,9 @@
 //
 
 #import "TTAppDelegate.h"
+#import "TTListViewController.h"
+#import "DetailViewController.h"
+#import "CustomEntryViewController.h"
 
 @implementation TTAppDelegate
 
@@ -16,6 +19,15 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    TTListViewController *vc = [TTListViewController new];
+    DetailViewController *dvc = [DetailViewController new];
+    CustomEntryViewController *cevc = [CustomEntryViewController new];
+    //UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:dvc];
+    //UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:cevc];
+    self.window.rootViewController = nc;
+    
     return YES;
 }
 
