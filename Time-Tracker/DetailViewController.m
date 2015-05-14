@@ -9,7 +9,6 @@
 #import "DetailViewController.h"
 #import "Project.h"
 #import "CustomEntryViewController.h"
-#import <MessageUI/MessageUI.h>
 
 @interface DetailViewController ()
 
@@ -73,6 +72,9 @@
 {
     MFMailComposeViewController *mailVC = [MFMailComposeViewController new];
     
+    mailVC.delegate = self;
+    mailVC.mailComposeDelegate = self;
+    
     NSMutableString *mutStr;
     for (Entry *entry in self.project.entries)
     {
@@ -86,6 +88,14 @@
     }
     [mailVC setMessageBody:(NSString *)mutStr isHTML:YES];
     [self presentViewController:mailVC animated:YES completion:nil];
+    
+    
+}
+
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Project.h"
 #import "DetailTableViewDataSource.h"
+#import <MessageUI/MessageUI.h>
 
-@interface DetailViewController : UIViewController <UITextFieldDelegate>
+@interface DetailViewController : UIViewController <UITextFieldDelegate, MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
