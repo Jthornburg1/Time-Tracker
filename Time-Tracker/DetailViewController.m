@@ -48,6 +48,7 @@
     [self.tableView reloadData];
     
     self.titleTextField.text = self.project.title;
+    [self updateTotalTime];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,6 +64,7 @@
     
     //[self.navigationController pushViewController:cevc animated:YES];
     [self presentViewController:cevc animated:YES completion:nil];
+    [self updateTotalTime];
 }
 
 - (IBAction)clockInBBM
@@ -75,6 +77,7 @@
 {
     [self.project endCurrentEntry];
     [self.tableView reloadData];
+    [self updateTotalTime];
 }
 
 - (IBAction)reportBBM
@@ -133,6 +136,19 @@
 {
     NSLog(@"got here");
     return 0;
+}
+
+- (void)updateTotalTime
+{
+    double sum = 0.0;
+    
+    for (int i=0; i<[self.project.entries count]; i++) {
+        Entry *entry = self.project.entries[i];
+        double duration = [entry.endDate timeIntervalSinceReferenceDate] -
+        [entry.startDate timeIntervalSinceReferenceDate];
+        sum += duration;
+    }
+    self.timeLabel.text = [NSString stringWithFormat:@"%.0f", sum];
 }
 
 @end
