@@ -88,7 +88,7 @@
     mailVC.mailComposeDelegate = self;
     
     NSMutableString *mutStr = [NSMutableString new];
-    [mutStr appendString:[NSString stringWithFormat:@"Total time is %.0f seconds", [self calcDuration]]];
+    [mutStr appendString:[NSString stringWithFormat:@"Total time is %.1f hours", [self calcDuration]]];
     [mutStr appendString:@"<br/>"];
     for (Entry *entry in self.project.entries)
     {
@@ -144,7 +144,7 @@
 - (void)updateTotalTime
 {
 
-    self.timeLabel.text = [NSString stringWithFormat:@"%.0f", [self calcDuration]];
+    self.timeLabel.text = [NSString stringWithFormat:@"%.1f hours", [self calcDuration]];
 }
 
 -(double)calcDuration
@@ -157,7 +157,7 @@
         [entry.startDate timeIntervalSinceReferenceDate];
         sum += duration;
     }
-    return sum;
+    return (sum/3600.0);
 }
 
 @end
