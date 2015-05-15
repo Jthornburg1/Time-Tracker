@@ -36,8 +36,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     //self.dataSource = (id)self.project;
+    self.dataSource = self.tableView.dataSource;
     self.dataSource.project = self.project;
-    self.tableView.delegate = self.dataSource;
+//    self.tableView.delegate = self.dataSource;
     NSLog(@"checkpoint");
 }
 

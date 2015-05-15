@@ -21,16 +21,18 @@ static NSString *detailCellID = @"detailCellID";
     if (!cell)
     {
         cell = [UITableViewCell new];
-        Entry *entry = self.project.entries[indexPath.row];
-        
-        NSDateFormatter *nsDateFmt = [NSDateFormatter new];
-        NSString *startDateString = [nsDateFmt stringFromDate:entry.startDate];
-        //NSDate *endDate = [[NSDate alloc] initWithTimeInterval:entry.durationInSeconds sinceDate:entry.startDate];
-        NSDate *endDate = entry.endDate;
-        NSString *endDateString = [nsDateFmt stringFromDate:endDate];
-        
-        cell.textLabel.text = [NSString stringWithFormat:@"%@ : %@", startDateString, endDateString];
     }
+    
+    Entry *entry = self.project.entries[indexPath.row];
+    
+    NSDateFormatter *nsDateFmt = [NSDateFormatter new];
+    nsDateFmt.dateStyle = NSDateFormatterLongStyle;
+    NSString *startDateString = [nsDateFmt stringFromDate:entry.startDate];
+    //NSDate *endDate = [[NSDate alloc] initWithTimeInterval:entry.durationInSeconds sinceDate:entry.startDate];
+    NSDate *endDate = entry.endDate;
+    NSString *endDateString = [nsDateFmt stringFromDate:endDate];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ : %@", startDateString, endDateString];
     return cell;
 }
 

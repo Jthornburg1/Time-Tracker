@@ -37,6 +37,7 @@
                     <rect key="frame" x="8" y="172" width="584" height="362"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
+                        <outlet property="dataSource" destination="2ap-7X-uhR" id="vpa-Dc-pKH"/>
                         <outlet property="delegate" destination="-1" id="VDc-yK-B7h"/>
                     </connections>
                 </tableView>
@@ -96,5 +97,6 @@
                 </mask>
             </variation>
         </view>
+        <customObject id="2ap-7X-uhR" customClass="DetailTableViewDataSource"/>
     </objects>
 </document>
