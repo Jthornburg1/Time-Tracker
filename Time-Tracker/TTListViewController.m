@@ -44,7 +44,7 @@
     
     ProjectController *projectController = [ProjectController sharedInstance];
     Project *newProject = [Project new];
-    newProject.title = @"Test";
+    newProject.title = @"Rename Me";
     [projectController addProject:newProject];
     dvc.project = newProject;
 

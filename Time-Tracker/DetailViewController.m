@@ -39,7 +39,6 @@
     self.dataSource = self.tableView.dataSource;
     self.dataSource.project = self.project;
 //    self.tableView.delegate = self.dataSource;
-    NSLog(@"checkpoint");
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -133,12 +132,6 @@
 {
     self.project.title = textField.text;
     return YES;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    NSLog(@"got here");
-    return 0;
 }
 
 - (void)updateTotalTime

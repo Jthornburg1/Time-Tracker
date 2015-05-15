@@ -17,9 +17,9 @@
     dispatch_once(&onceToken, ^{
         sharedInstance = [[ProjectController alloc] init];
         sharedInstance.projectArray = [NSMutableArray new];
-        Project *newProject = [Project new];
-        newProject.title = @"Test New Project Title";
-        [sharedInstance addProject:newProject];
+        //Project *newProject = [Project new];
+        //newProject.title = @"Test New Project Title";
+        //[sharedInstance addProject:newProject];
     });
     return sharedInstance;
 }
