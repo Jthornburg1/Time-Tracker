@@ -25,14 +25,34 @@ static NSString *detailCellID = @"detailCellID";
     
     Entry *entry = self.project.entries[indexPath.row];
     
-    NSDateFormatter *nsDateFmt = [NSDateFormatter new];
-    nsDateFmt.dateStyle = NSDateFormatterLongStyle;
+    /*NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    
+    NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
+    [timeFormat setDateFormat:@"HH:mm:ss"];
+    
+    NSDate *now = [[NSDate alloc] init];
+    
+    NSString *theDate = [dateFormat stringFromDate:now];
+    NSString *theTime = [timeFormat stringFromDate:now];
+    
+    NSLog(@"\n"
+          "theDate: |%@| \n"
+          "theTime: |%@| \n"
+          , theDate, theTime);
+    
+    [dateFormat release];
+    [timeFormat release];
+    [now release];*/
+    
+    NSDateFormatter *nsDateFmt = [[NSDateFormatter alloc] init];
+    [nsDateFmt setDateFormat:@"MM/dd HH:mm:ss"];
+    
     NSString *startDateString = [nsDateFmt stringFromDate:entry.startDate];
     //NSDate *endDate = [[NSDate alloc] initWithTimeInterval:entry.durationInSeconds sinceDate:entry.startDate];
-    NSDate *endDate = entry.endDate;
-    NSString *endDateString = [nsDateFmt stringFromDate:endDate];
+    NSString *endDateString = [nsDateFmt stringFromDate:entry.endDate];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ : %@", startDateString, endDateString];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ | %@", startDateString, endDateString];
     return cell;
 }
 

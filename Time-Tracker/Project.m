@@ -16,6 +16,7 @@
     if (self) {
         self.title = @"";
         self.entries = [NSMutableArray new];
+        self.currentEntry = 0;
     }
     return self;
 }
@@ -55,12 +56,13 @@
 -(void)startNewEntry {
     Entry *newEntry = [Entry new];
     newEntry.startDate = [NSDate date];
-    //[self addEntry:newEntry];
-    self.currentEntry = newEntry;
+    [self addEntry:newEntry];
+    self.currentEntry++;
 }
 
 -(void)endCurrentEntry {
-    self.currentEntry.endDate = [NSDate date];
+    Entry *entry = self.entries[[self.entries count] -1];
+    entry.endDate = [NSDate date];
 }
 
 @end

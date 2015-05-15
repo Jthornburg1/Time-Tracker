@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSMutableArray *entries;
-@property (nonatomic, strong) Entry *currentEntry;
+@property (nonatomic) int currentEntry;
 
 -(instancetype)init;
 -(void)addEntry:(Entry *)entry;
