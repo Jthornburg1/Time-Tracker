@@ -87,17 +87,20 @@
     mailVC.delegate = self;
     mailVC.mailComposeDelegate = self;
     
-    NSMutableString *mutStr;
+    NSMutableString *mutStr = [NSMutableString new];
+    [mutStr appendString:[NSString stringWithFormat:@"Total time is %.0f seconds", [self calcDuration]]];
+    [mutStr appendString:@"<br/>"];
     for (Entry *entry in self.project.entries)
     {
-        NSDateFormatter *dateFmt = [NSDateFormatter new];
+        NSDateFormatter *nsDateFmt = [[NSDateFormatter alloc] init];
+        [nsDateFmt setDateFormat:@"MM/dd HH:mm:ss"];
         
-        NSString *startStr = [dateFmt stringFromDate:entry.startDate];
-        NSString *endStr = [dateFmt stringFromDate:entry.endDate];
+        NSString *startDateString = [nsDateFmt stringFromDate:entry.startDate];
+        NSString *endDateString = [nsDateFmt stringFromDate:entry.endDate];
         
-        [mutStr appendString:startStr];
-        [mutStr appendString:endStr];
+        [mutStr appendString:[NSString stringWithFormat:@"%@ | %@<br/>", startDateString, endDateString]];
     }
+    [mailVC setSubject:[NSString stringWithFormat:@"Your Timecard for Project:%@", self.project.title]];
     [mailVC setMessageBody:(NSString *)mutStr isHTML:YES];
     [self presentViewController:mailVC animated:YES completion:nil];
     
@@ -140,6 +143,12 @@
 
 - (void)updateTotalTime
 {
+
+    self.timeLabel.text = [NSString stringWithFormat:@"%.0f", [self calcDuration]];
+}
+
+-(double)calcDuration
+{
     double sum = 0.0;
     
     for (int i=0; i<[self.project.entries count]; i++) {
@@ -148,7 +157,7 @@
         [entry.startDate timeIntervalSinceReferenceDate];
         sum += duration;
     }
-    self.timeLabel.text = [NSString stringWithFormat:@"%.0f", sum];
+    return sum;
 }
 
 @end
